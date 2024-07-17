@@ -31,13 +31,13 @@ export async function createActivity(app: FastifyInstance) {
         throw new ClientError('Trip not found')
       }
 
-      if (dayjs(occurs_at).isBefore(trip.starts_at)) {
-        throw new ClientError('Invalid activity date.')
-      }
+      // if (dayjs(occurs_at).isBefore(trip.starts_at)) {
+      //   throw new ClientError('Invalid activity date.')
+      // }
 
-      if (dayjs(occurs_at).isAfter(trip.ends_at)) {
-        throw new ClientError('Invalid activity date.')
-      }
+      // if (dayjs(occurs_at).isAfter(trip.ends_at)) {
+      //   throw new ClientError('Invalid activity date.')
+      // }
 
       const activity = await prisma.activity.create({
         data: {
